@@ -52,6 +52,7 @@ bool LinkedList<T>::search(T value) const
 		}
 		temp = temp->getNext();
 	}
+
 	return(isFound);
 }
 
@@ -113,6 +114,22 @@ bool LinkedList<T>::removeBack()
 	/** TODO
 		Fix this method
 	*/
+	if (isEmpty()) {
+		isRemoved = false;
+	}
+	else {
+		secondintoLast = m_front;
+		lastNode = m_front->getNext();
+		while (lastNode->getNext() != nullptr) {
+			secondintoLast = lastNode;
+			lastNode = lastNode->getNext();
+		}
+		delete lastNode;
+		lastNode = nullptr;
+		secondintoLast->setNext(nullptr);
+		m_size--;
+		isRemoved = false;
+	}
 
 	return(isRemoved);
 }
