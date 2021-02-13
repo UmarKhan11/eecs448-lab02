@@ -5,7 +5,6 @@
 *	@brief Implementation file for templated LinkedList class
 */
 
-#include "LinkedList.hpp"
 
 template <typename T>
 LinkedList<T>::LinkedList() : m_front(nullptr), m_size(0)
